@@ -8,6 +8,8 @@ import Skills from './Pages/Skills';
 import Home from './Pages/Home';
 import NavbarLogo from './Components/NavbarLogo';
 import StickyIcons from './Components/StickyIcons';
+import ContactUs from './Components/Contact';
+
 
 export default function App() {
     const [loading, setLoading] = useState(true);
@@ -33,6 +35,7 @@ export default function App() {
                         <Route path="/AboutUs" element={<AboutUs />} />
                         <Route path="/projects" element={<Projects />} />
                         <Route path="/skills" element={<Skills />} />
+                        <Route path="/ContactUs" element={<ContactUs />} />
                     </Routes>
                 )}
             </div>

@@ -50,7 +50,7 @@ export default function Navbar() {
                     <Link to="/AboutUs" onClick={() => setIsMenuActive(false)}>About</Link>
                     <Link to="/Projects" onClick={() => setIsMenuActive(false)}>Projects</Link>
                     <Link to="/Skills" onClick={() => setIsMenuActive(false)}>Skills</Link>
-                    <Link to="#">Contact</Link>
+                    <Link to="/ContactUs">Contact</Link>
                 </div>
                 <button className="theme-toggle" onClick={toggleTheme}>
                     {isDarkMode ? '🌞' : '🌙'}

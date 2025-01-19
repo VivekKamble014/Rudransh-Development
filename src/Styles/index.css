@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Home section css */
+section{
+  height: 100vh;
+}
+.home{
+    width: 100%;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    background-color: black;
+    background-image: url('../Images/b2.jpg'); /* Update the path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+    
+}
+.home h1 {
+    padding-inline: 50px;
+    line-height: 2;
+    font-family: "Playwrite VN", serif;
+    font-size: 35px;
+    font-weight: 600;
+
+}

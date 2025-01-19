@@ -1,0 +1,49 @@
+.sticky-icons {
+    position: fixed;
+    right: 0;
+    bottom: 50%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    gap: 10px;
+  }
+  
+  .sticky-icon {
+    width: 80px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px 0 0 20px  ;
+    box-shadow: 0 4px 6px rgba(141, 140, 140, 0.984);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .sticky-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(151, 70, 70, 0.733);
+  }
+  
+  .sticky-icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    opacity: 1;
+  }
+  
+  .whatsapp {
+    background-color: #58fd7675;
+  }
+  
+  .call {
+    background-color: #0400ea1f;
+  }
+  
+  .whatsapp img {
+    filter: invert(1);
+  }
+  
+  .call img {
+    filter: invert(1);
+  }

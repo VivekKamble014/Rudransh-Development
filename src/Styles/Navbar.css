@@ -1,0 +1,150 @@
+/* Default light mode styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    margin-top: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    color: #000000;
+    position: fixed;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar-menu a {
+    color: #000000;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.navbar button{
+    font-size: 30px;
+}
+
+.navbar-menu a:hover {
+    background-color: #575757;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .navbar {
+    background-color: #111;
+    color: white;
+}
+
+body.dark-mode .navbar-menu a {
+    color: #fff;
+}
+
+body.dark-mode .navbar-menu a:hover {
+    background-color: #575757;
+}
+
+body.dark-mode .theme-toggle {
+    color: #fff;
+}
+body.dark-mode .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fafafa;
+}
+body.dark-mode .navbar-menu {
+
+background-color: black;
+text-align: center;
+}
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Home saction */
+body.dark-mode .home{
+    background-image: url('../Images/b1.jpg'); /* Update the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+body.dark-mode .home{
+
+}
+
+/* NavbarLogo */
+.Navbarlogo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: white;
+    
+}
+.Navbarlogo img{
+    height: 60px;
+}
+
+/* Mobile Menu styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background-color: #b0afaf;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+    .navbar-brand {
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
+
+

@@ -6,9 +6,12 @@ import AboutUs from './Pages/AboutUs';
 import Projects from './Pages/Projects';
 import Skills from './Pages/Skills';
 import Home from './Pages/Home';
+import Founder from './Pages/Founder';
+import DevelopmentTeam from './Pages/DevelopmentTeam';
 import NavbarLogo from './Components/NavbarLogo';
 import StickyIcons from './Components/StickyIcons';
 import ContactUs from './Components/Contact';
+import './Styles/black-theme-override.css';
 
 
 export default function App() {
@@ -36,6 +39,8 @@ export default function App() {
                         <Route path="/projects" element={<Projects />} />
                         <Route path="/skills" element={<Skills />} />
                         <Route path="/ContactUs" element={<ContactUs />} />
+                        <Route path="/founder" element={<Founder />} />
+                        <Route path="/development-team" element={<DevelopmentTeam />} />
                     </Routes>
                 )}
             </div>

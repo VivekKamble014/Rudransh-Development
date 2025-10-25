@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Styles/Projects.css';
+import Footer from '../Components/Footer';
 
 export default function Projects() {
     const projects = [
@@ -95,6 +96,9 @@ export default function Projects() {
                     </div>
                 ))}
             </div>
+            
+            {/* Footer */}
+            <Footer />
         </div>
     );
 }

@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Styles/AboutUs.css';
 import vivekImage from '../Images/vivek.png';
+import mansiImage from '../Images/vivek.png';
+import chaitanyaImage from '../Images/vivek.png';
+import nikhilImage from '../Images/vivek.png';
+import radhaImage from '../Images/vivek.png';
+import yogitaImage from '../Images/vivek.png';
+import ajayImage from '../Images/vivek.png';
+import Footer from '../Components/Footer';
 import { 
   FaRocket, 
   FaStar, 
@@ -11,7 +18,11 @@ import {
   FaBolt,
   FaEnvelope,
   FaPhone,
-  FaMapMarkerAlt
+  FaMapMarkerAlt,
+  FaAward,
+  FaCode,
+  FaPalette,
+  FaCloud
 } from 'react-icons/fa';
 export default function AboutUs() {
     const [isVisible, setIsVisible] = useState({});
@@ -162,15 +173,21 @@ export default function AboutUs() {
                         </div>
                         <div className="intro-visual" data-animate="intro-visual">
                             <div className="floating-card card-1">
-                                <span className="card-icon">💻</span>
+                                <span className="card-icon">
+                                    <FaCode />
+                                </span>
                                 <span className="card-text">Web Development</span>
                             </div>
                             <div className="floating-card card-2">
-                                <span className="card-icon">🎨</span>
+                                <span className="card-icon">
+                                    <FaPalette />
+                                </span>
                                 <span className="card-text">Web Design</span>
                             </div>
                             <div className="floating-card card-3">
-                                <span className="card-icon">☁️</span>
+                                <span className="card-icon">
+                                    <FaCloud />
+                                </span>
                                 <span className="card-text">Web Hosting</span>
                             </div>
                         </div>
@@ -219,21 +236,27 @@ export default function AboutUs() {
                             <div className="mission-features">
                                 <div className="mission-feature">
                                     <div className="feature-icon">
-                                        <FaRocket className="feature-icon-svg" />
+                                        <FaLightbulb className="feature-icon-svg" />
                                     </div>
                                     <span>Innovation</span>
                                 </div>
                                 <div className="mission-feature">
                                     <div className="feature-icon">
-                                        <FaStar className="feature-icon-svg" />
+                                        <FaAward className="feature-icon-svg" />
                                     </div>
-                                    <span>Quality</span>
+                                    <span>Excellence</span>
                                 </div>
                                 <div className="mission-feature">
                                     <div className="feature-icon">
                                         <FaChartLine className="feature-icon-svg" />
                                     </div>
                                     <span>Growth</span>
+                                </div>
+                                <div className="mission-feature">
+                                    <div className="feature-icon">
+                                        <FaBullseye className="feature-icon-svg" />
+                                    </div>
+                                    <span>Results</span>
                                 </div>
                             </div>
                         </div>
@@ -250,7 +273,12 @@ export default function AboutUs() {
                     </div>
                     <div className="team-grid">
                         {team.map((member, index) => (
-                            <div key={index} className="team-card" data-animate={`team-${index}`}>
+                            <a 
+                                key={index} 
+                                href={member.name === "Vivek Kamble" ? "/founder" : "/development-team"}
+                                className="team-card" 
+                                data-animate={`team-${index}`}
+                            >
                                 <div className="team-image">
                                     <img src={member.image} alt={member.name} />
                                     <div className="team-overlay">
@@ -259,14 +287,40 @@ export default function AboutUs() {
                                                 <span key={skillIndex} className="skill-tag">{skill}</span>
                                             ))}
                                         </div>
+                                        <div className="team-link-indicator">
+                                            <span>Learn More →</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="team-info">
                                     <h3>{member.name}</h3>
                                     <p className="team-role">{member.role}</p>
                                 </div>
-                            </div>
+                            </a>
                         ))}
+                    </div>
+                    
+                    {/* Team Navigation Links */}
+                    <div className="team-navigation" data-animate="team-navigation">
+                        <div className="team-nav-cards">
+                            <a href="/founder" className="team-nav-card">
+                                <div className="nav-card-icon">
+                                    <FaRocket />
+                                </div>
+                                <h3>Meet Our Founder</h3>
+                                <p>Learn about Vivek Kamble's journey, expertise, and vision for Rudransh Development</p>
+                                <div className="nav-card-arrow">→</div>
+                            </a>
+                            
+                            <a href="/development-team" className="team-nav-card">
+                                <div className="nav-card-icon">
+                                    <FaBolt />
+                                </div>
+                                <h3>Development Team</h3>
+                                <p>Discover our talented team of developers, designers, and engineers</p>
+                                <div className="nav-card-arrow">→</div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -319,6 +373,9 @@ export default function AboutUs() {
                     </div>
                 </div>
             </section>
+            
+            {/* Footer */}
+            <Footer />
         </div>
     );
 }

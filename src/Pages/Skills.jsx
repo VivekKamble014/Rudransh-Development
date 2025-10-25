@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Styles/Skills.css';
+import Footer from '../Components/Footer';
 import { 
   FaHtml5, 
   FaCss3Alt, 
@@ -168,6 +169,9 @@ export default function Skills() {
                     </div>
                 </div>
             </div>
+            
+            {/* Footer */}
+            <Footer />
         </div>
     );
 }

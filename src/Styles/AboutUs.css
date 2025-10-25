@@ -11,7 +11,7 @@
 .about-container {
    
     min-height: 100vh;
-    background: white;
+    background: #1a1a1a;
 }
 
 /* Hero Section */
@@ -224,9 +224,9 @@
 }
 
 .card-icon {
-    font-size: 2.5rem;
-    width: 60px;
-    height: 60px;
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -234,6 +234,12 @@
     background: linear-gradient(135deg, #4caf50, #8bc34a);
     color: white;
     flex-shrink: 0;
+}
+
+.card-icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .card-text {
@@ -319,7 +325,7 @@
 }
 
 .value-icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
     width: 80px;
     height: 80px;
@@ -332,9 +338,24 @@
     color: white;
 }
 
+.value-icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .value-icon-svg {
     font-size: 2.5rem;
     color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.value-icon-svg svg {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .value-card h3 {
@@ -416,9 +437,9 @@
 }
 
 .mission-features {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
     align-items: center;
 }
 
@@ -439,20 +460,29 @@
 }
 
 .feature-icon {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: white;
     background: linear-gradient(135deg, #4caf50, #8bc34a);
 }
 
 .feature-icon-svg {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.feature-icon-svg svg {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 /* Team Section */
@@ -475,6 +505,10 @@
     transition: all 0.4s ease;
     opacity: 0;
     transform: translateY(50px);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border: 1px solid #e9ecef;
 }
 
 .team-card.animate {
@@ -488,6 +522,7 @@
 .team-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    border-color: #4caf50;
 }
 
 .team-image {
@@ -531,6 +566,28 @@
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+    margin-bottom: 20px;
+}
+
+.team-link-indicator {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.team-link-indicator span {
+    background: rgba(76, 175, 80, 0.9);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.team-card:hover .team-link-indicator span {
+    background: #4caf50;
+    transform: scale(1.05);
 }
 
 .skill-tag {
@@ -743,6 +800,11 @@ body.dark-mode .team-section {
 
 body.dark-mode .team-card {
     background: #34495e;
+    border-color: #4a5568;
+}
+
+body.dark-mode .team-card:hover {
+    border-color: #4caf50;
 }
 
 body.dark-mode .team-info h3 {
@@ -843,6 +905,156 @@ body.dark-mode .method-info p {
     }
 }
 
+/* Team Navigation Styles */
+.team-navigation {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #e9ecef;
+}
+
+.team-nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.team-nav-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-nav-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.team-nav-card:hover::before {
+    left: 100%;
+}
+
+.team-nav-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: #4caf50;
+}
+
+.nav-card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #4caf50, #45a049);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.team-nav-card:hover .nav-card-icon {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+}
+
+.team-nav-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    transition: color 0.3s ease;
+}
+
+.team-nav-card:hover h3 {
+    color: #4caf50;
+}
+
+.team-nav-card p {
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.nav-card-arrow {
+    color: #4caf50;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.team-nav-card:hover .nav-card-arrow {
+    transform: translateX(10px);
+    color: #45a049;
+}
+
+/* Responsive Design for Team Navigation */
+@media (max-width: 768px) {
+    .team-nav-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .team-nav-card {
+        padding: 25px;
+    }
+    
+    .nav-card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .team-nav-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-navigation {
+        margin-top: 40px;
+        padding-top: 30px;
+    }
+    
+    .team-nav-card {
+        padding: 20px;
+    }
+    
+    .nav-card-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    
+    .team-nav-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .team-nav-card p {
+        font-size: 0.95rem;
+    }
+    
+    .mission-features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2rem;
@@ -872,4 +1084,1284 @@ body.dark-mode .method-info p {
         flex-direction: column;
         text-align: center;
     }
+}
+
+/* ========================================
+   FOUNDER PAGE STYLES
+======================================== */
+
+.founder-page {
+    background: white;
+    color: #2c3e50;
+}
+
+/* Founder Hero Section */
+.founder-hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.founder-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%234caf50" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.founder-hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.founder-image-section {
+    text-align: center;
+}
+
+.founder-image-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.founder-image-container img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.image-glow {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: linear-gradient(45deg, #4caf50, #45a049);
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: pulse 2s infinite;
+}
+
+.founder-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #4caf50, #45a049);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+}
+
+.founder-info-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #2c3e50, #4caf50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.founder-title {
+    font-size: 1.3rem;
+    color: #4caf50;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.founder-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+.founder-stats {
+    display: flex;
+    gap: 30px;
+}
+
+.founder-stats .stat {
+    text-align: center;
+}
+
+.founder-stats .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4caf50;
+}
+
+.founder-stats .stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* Skills Section */
+.founder-skills {
+    padding: 80px 0;
+    background: white;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.skill-item {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-color: #4caf50;
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.skill-icon {
+    color: #4caf50;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.skill-name {
+    font-weight: 600;
+    color: #2c3e50;
+    flex: 1;
+}
+
+.skill-percentage {
+    color: #4caf50;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.skill-bar {
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #4caf50, #45a049);
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+
+/* Achievements Section */
+.founder-achievements {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.achievement-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.achievement-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #4caf50, #45a049);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.achievement-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.achievement-card p {
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+/* Timeline Section */
+.founder-timeline {
+    padding: 80px 0;
+    background: white;
+}
+
+.timeline {
+    position: relative;
+    margin-top: 50px;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #4caf50, #45a049);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 40px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -37px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: #4caf50;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #4caf50;
+}
+
+.timeline-content {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid #4caf50;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateX(10px);
+}
+
+.timeline-year {
+    color: #4caf50;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.timeline-content p {
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+/* Philosophy Section */
+.founder-philosophy {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+}
+
+.philosophy-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.philosophy-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #4caf50;
+}
+
+.philosophy-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #bdc3c7;
+}
+
+.philosophy-quote {
+    background: rgba(76, 175, 80, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 4px solid #4caf50;
+    margin-top: 30px;
+}
+
+.quote-icon {
+    color: #4caf50;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.philosophy-quote blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: #ecf0f1;
+    margin: 0;
+}
+
+.philosophy-visual {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.philosophy-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.philosophy-card:hover {
+    background: rgba(76, 175, 80, 0.2);
+    transform: translateY(-5px);
+}
+
+.philosophy-icon {
+    color: #4caf50;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.philosophy-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ecf0f1;
+}
+
+.philosophy-card p {
+    color: #bdc3c7;
+    line-height: 1.6;
+}
+
+/* ========================================
+   DEVELOPMENT TEAM PAGE STYLES
+======================================== */
+
+.development-team-page {
+    background: white;
+    color: #2c3e50;
+}
+
+/* Team Hero Section */
+.team-hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%234caf50" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    opacity: 0.3;
+}
+
+.team-hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.team-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #4caf50, #45a049);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+}
+
+.team-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #2c3e50, #4caf50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.team-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #6c757d;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.team-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.team-stat {
+    text-align: center;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.team-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+    color: #4caf50;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.stat-icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.team-stat .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.team-stat .stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* Team Members Section */
+.team-members {
+    padding: 80px 0;
+    background: white;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.member-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.member-image {
+    position: relative;
+    height: 280px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    border-radius: 20px 20px 0 0;
+}
+
+.member-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center center;
+    transition: transform 0.3s ease;
+    border-radius: 0;
+    background: #000000;
+    display: block;
+}
+
+.member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(76, 175, 80, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.member-card:hover .member-overlay {
+    opacity: 1;
+}
+
+.member-card:hover .member-image img {
+    transform: scale(1.1);
+}
+
+.member-social {
+    display: flex;
+    gap: 15px;
+}
+
+.member-social .social-link {
+    width: 45px;
+    height: 45px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4caf50;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.member-social .social-link:hover {
+    background: #4caf50;
+    color: white;
+    transform: scale(1.1);
+}
+
+.member-info {
+    padding: 25px;
+}
+
+.member-info h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.member-role {
+    color: #4caf50;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.member-experience {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.member-bio {
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.member-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tag {
+    background: #f8f9fa;
+    color: #4caf50;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid #e9ecef;
+}
+
+/* Technologies Section */
+.team-technologies {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.technologies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.technology-category {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.technology-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.category-icon {
+    color: #4caf50;
+    font-size: 2.8rem;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.category-icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.category-header h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-item {
+    background: #f8f9fa;
+    color: #2c3e50;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.tech-item:hover {
+    background: #4caf50;
+    color: white;
+    border-color: #4caf50;
+}
+
+/* Team Culture Section */
+.team-culture {
+    padding: 80px 0;
+    background: white;
+}
+
+.culture-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.culture-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.culture-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #6c757d;
+    margin-bottom: 40px;
+}
+
+.culture-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.value-item {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.value-item:hover {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    color: #4caf50;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.value-icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.value-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.value-item p {
+    color: #6c757d;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.culture-visual {
+    display: grid;
+    gap: 20px;
+}
+
+.culture-card {
+    background: linear-gradient(135deg, #4caf50, #45a049);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.culture-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(76, 175, 80, 0.3);
+}
+
+.culture-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.culture-card p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Join Team Section */
+.join-team {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    text-align: center;
+}
+
+.join-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #4caf50;
+}
+
+.join-content p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #bdc3c7;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.join-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(76, 175, 80, 0.1);
+    padding: 15px 25px;
+    border-radius: 25px;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    transition: all 0.3s ease;
+}
+
+.benefit:hover {
+    background: rgba(76, 175, 80, 0.2);
+    transform: translateY(-3px);
+}
+
+.benefit svg {
+    color: #4caf50;
+    font-size: 1.2rem;
+}
+
+.benefit span {
+    font-weight: 500;
+    color: #ecf0f1;
+}
+
+/* Responsive Design for Team Pages */
+@media (max-width: 768px) {
+    .founder-hero-content,
+    .philosophy-content,
+    .culture-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .founder-hero h1,
+    .team-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .founder-stats,
+    .team-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .skills-grid,
+    .achievements-grid,
+    .members-grid,
+    .technologies-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .culture-values {
+        grid-template-columns: 1fr;
+    }
+    
+    .value-icon {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+    
+    .join-benefits {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .timeline {
+        padding-left: 20px;
+    }
+    
+    .timeline::before {
+        left: 10px;
+    }
+    
+    .timeline-item {
+        padding-left: 30px;
+    }
+    
+    .timeline-marker {
+        left: -27px;
+    }
+}
+
+@media (max-width: 480px) {
+    .founder-hero,
+    .team-hero {
+        padding: 100px 0 60px;
+    }
+    
+    .founder-hero h1,
+    .team-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .founder-image-container img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .founder-stats .stat-number,
+    .team-stat .stat-number {
+        font-size: 2rem;
+    }
+    
+    .philosophy-text h2,
+    .culture-text h2,
+    .join-content h2 {
+        font-size: 2rem;
+    }
+    
+    .member-card {
+        margin: 0 10px;
+    }
+    
+    .member-image {
+        height: 250px;
+    }
+    
+    .member-image img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(1.05);
+    }
+}
+
+/* ========================================
+   DARK MODE STYLES FOR TEAM PAGES
+======================================== */
+
+/* Founder Page Dark Mode */
+body.dark-mode .founder-page {
+    background: #2c3e50;
+    color: #ecf0f1;
+}
+
+body.dark-mode .founder-hero {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+body.dark-mode .founder-info-section h1 {
+    background: linear-gradient(135deg, #ecf0f1, #4caf50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.dark-mode .founder-title {
+    color: #4caf50;
+}
+
+body.dark-mode .founder-description {
+    color: #bdc3c7;
+}
+
+body.dark-mode .founder-stats .stat-number {
+    color: #4caf50;
+}
+
+body.dark-mode .founder-stats .stat-label {
+    color: #bdc3c7;
+}
+
+body.dark-mode .skill-item {
+    background: #34495e;
+    border-color: #4a5568;
+}
+
+body.dark-mode .skill-item:hover {
+    border-color: #4caf50;
+}
+
+body.dark-mode .skill-name {
+    color: #ecf0f1;
+}
+
+body.dark-mode .achievement-card {
+    background: #34495e;
+    border-color: #4a5568;
+}
+
+body.dark-mode .achievement-card h3 {
+    color: #ecf0f1;
+}
+
+body.dark-mode .achievement-card p {
+    color: #bdc3c7;
+}
+
+body.dark-mode .timeline-content {
+    background: #34495e;
+    border-left-color: #4caf50;
+}
+
+body.dark-mode .timeline-content:hover {
+    background: #2c3e50;
+}
+
+body.dark-mode .timeline-content h3 {
+    color: #ecf0f1;
+}
+
+body.dark-mode .timeline-content p {
+    color: #bdc3c7;
+}
+
+body.dark-mode .philosophy-text h2 {
+    color: #4caf50;
+}
+
+body.dark-mode .philosophy-text p {
+    color: #bdc3c7;
+}
+
+body.dark-mode .philosophy-quote {
+    background: rgba(76, 175, 80, 0.1);
+    border-left-color: #4caf50;
+}
+
+body.dark-mode .philosophy-quote blockquote {
+    color: #ecf0f1;
+}
+
+body.dark-mode .philosophy-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .philosophy-card:hover {
+    background: rgba(76, 175, 80, 0.2);
+}
+
+body.dark-mode .philosophy-card h3 {
+    color: #ecf0f1;
+}
+
+body.dark-mode .philosophy-card p {
+    color: #bdc3c7;
+}
+
+/* Development Team Page Dark Mode */
+body.dark-mode .development-team-page {
+    background: #2c3e50;
+    color: #ecf0f1;
+}
+
+body.dark-mode .team-hero {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+body.dark-mode .team-hero h1 {
+    background: linear-gradient(135deg, #ecf0f1, #4caf50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.dark-mode .team-subtitle {
+    color: #bdc3c7;
+}
+
+body.dark-mode .team-stat {
+    background: #34495e;
+    border-color: #4a5568;
+}
+
+body.dark-mode .team-stat .stat-number {
+    color: #2c3e50;
+}
+
+body.dark-mode .team-stat .stat-label {
+    color: #bdc3c7;
+}
+
+body.dark-mode .member-card {
+    background: #34495e;
+    border-color: #4a5568;
+}
+
+body.dark-mode .member-card:hover {
+    border-color: #4caf50;
+}
+
+body.dark-mode .member-image {
+    background: #000000;
+}
+
+body.dark-mode .member-image img {
+    background: #000000;
+}
+
+body.dark-mode .member-info h3 {
+    color: #ecf0f1;
+}
+
+body.dark-mode .member-role {
+    color: #4caf50;
+}
+
+body.dark-mode .member-experience {
+    color: #bdc3c7;
+}
+
+body.dark-mode .member-bio {
+    color: #bdc3c7;
+}
+
+body.dark-mode .skill-tag {
+    background: #2c3e50;
+    color: #4caf50;
+    border-color: #4a5568;
+}
+
+body.dark-mode .technology-category {
+    background: #34495e;
+    border-color: #4a5568;
+}
+
+body.dark-mode .category-header h3 {
+    color: #ecf0f1;
+}
+
+body.dark-mode .tech-item {
+    background: #2c3e50;
+    color: #ecf0f1;
+    border-color: #4a5568;
+}
+
+body.dark-mode .tech-item:hover {
+    background: #4caf50;
+    color: white;
+    border-color: #4caf50;
+}
+
+body.dark-mode .culture-text h2 {
+    color: #ecf0f1;
+}
+
+body.dark-mode .culture-text p {
+    color: #bdc3c7;
+}
+
+body.dark-mode .value-item {
+    background: #34495e;
+    border-color: #4a5568;
+}
+
+body.dark-mode .value-item:hover {
+    background: #2c3e50;
+}
+
+body.dark-mode .value-item h3 {
+    color: #ecf0f1;
+}
+
+body.dark-mode .value-item p {
+    color: #bdc3c7;
+}
+
+body.dark-mode .join-content h2 {
+    color: #4caf50;
+}
+
+body.dark-mode .join-content p {
+    color: #bdc3c7;
+}
+
+body.dark-mode .benefit {
+    background: rgba(76, 175, 80, 0.1);
+    border-color: rgba(76, 175, 80, 0.3);
+}
+
+body.dark-mode .benefit:hover {
+    background: rgba(76, 175, 80, 0.2);
+}
+
+body.dark-mode .benefit span {
+    color: #ecf0f1;
 }

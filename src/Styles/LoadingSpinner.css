@@ -34,3 +34,14 @@
   @keyframes l9 {
     to {transform:perspective(300px) translateZ(100px);opacity:0}
   }
+
+/* Dark mode styles for LoadingSpinner */
+body.dark-mode .loading-overlay {
+    background-color: rgba(44, 62, 80, 0.9);
+}
+
+body.dark-mode .loader:before,
+body.dark-mode .loader:after {
+    background: #4caf50;
+    box-shadow: 0 0 0 50px;
+}
